@@ -1,0 +1,10 @@
+README.md
+setup.py
+coordinates/__init__.py
+coordinates/util.py
+net/__init__.py
+wildfirepy.egg-info/PKG-INFO
+wildfirepy.egg-info/SOURCES.txt
+wildfirepy.egg-info/dependency_links.txt
+wildfirepy.egg-info/not-zip-safe
+wildfirepy.egg-info/top_level.txt
