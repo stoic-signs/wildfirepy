@@ -5,6 +5,6 @@ setup(
         description='Testing installation of Package',
         url='#',
         license='MIT',
-        packages=['net', 'coordinates'],
+        packages=['wildfirepy'],
         zip_safe=False
      )

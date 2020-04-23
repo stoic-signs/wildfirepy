@@ -1,8 +1,6 @@
 README.md
 setup.py
-coordinates/__init__.py
-coordinates/util.py
-net/__init__.py
+wildfirepy/__init__.py
 wildfirepy.egg-info/PKG-INFO
 wildfirepy.egg-info/SOURCES.txt
 wildfirepy.egg-info/dependency_links.txt
