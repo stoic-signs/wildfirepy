@@ -1,4 +1,3 @@
-import requests
 import urllib
 import urllib.request
 from urllib.request import HTTPPasswordMgrWithDefaultRealm
@@ -6,14 +5,15 @@ from urllib.request import HTTPBasicAuthHandler, HTTPCookieProcessor
 from http.cookiejar import CookieJar
 import re
 
+__all__ = ['URLOpenerWithRedirect', 'ModisHtmlParser', ]
 
-class URLOpenerWithRedirect():
+
+class URLOpenerWithRedirect:
 
     def __init__(self, username='RaahulSingh', password='WildFire_Bad.100',
                  top_level_url="https://urs.earthdata.nasa.gov/"):
-
         auth_manager = HTTPPasswordMgrWithDefaultRealm()
-        auth_manager.add_password(None, top_level_url, username, password)
+        auth_manager.add_password('', top_level_url, username, password)
         handler = HTTPBasicAuthHandler(auth_manager)
         self.opener = urllib.request.build_opener(handler, HTTPCookieProcessor(CookieJar()))
 
@@ -21,7 +21,7 @@ class URLOpenerWithRedirect():
         return self.opener.open(url)
 
 
-class MODISHTMLParser():
+class ModisHtmlParser:
 
     def __init__(self):
         self.url_opener = URLOpenerWithRedirect()
@@ -39,7 +39,6 @@ class MODISHTMLParser():
         h = str(h) if h > 9 else "0" + str(h)
         v = str(v) if v > 9 else "0" + str(v)
 
-        coord = 'h{h}v{v}'
         r = re.compile(r'.*' + f'.(h{h}v{v}).')
 
         match = list(filter(r.match, self.get_all_hdf_files()))

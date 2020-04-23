@@ -2,7 +2,10 @@ from pyproj import Proj
 import math
 
 
-class SinusoidalCoordinate():
+__all__ = ['SinusoidalCoordinate', ]
+
+
+class SinusoidalCoordinate:
     """
     Converts latitude and longitude in degrees to MODIS Sinusoidal grid coordinates.
     """

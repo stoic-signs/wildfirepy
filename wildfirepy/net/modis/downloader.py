@@ -1,15 +1,18 @@
-from net.util.util import URLOpenerWithRedirect, MODISHTMLParser
-from coordinates.util import SinusoidalCoordinate
+from wildfirepy.net.util import URLOpenerWithRedirect, ModisHtmlParser
+from wildfirepy.coordinates.util import SinusoidalCoordinate
 from requests.exceptions import HTTPError
 from pathlib import Path
-import urllib
+from urllib.error import HTTPError
 
 
-class AbstractMODISDownloader():
+__all__ = ['AbstractModisDownloader', 'ModisBurntDownloader']
+
+
+class AbstractModisDownloader:
 
     def __init__(self):
         self.base_url = 'https://e4ftl01.cr.usgs.gov/'
-        self.regex_traverser = MODISHTMLParser()
+        self.regex_traverser = ModisHtmlParser()
         self.converter = SinusoidalCoordinate()
         self.url_opener = URLOpenerWithRedirect()
         self.has_files = False
@@ -80,12 +83,12 @@ class AbstractMODISDownloader():
             response.close()
             return filename.absolute().as_posix()
 
-        except urllib.request.HTTPError as err:
+        except HTTPError as err:
             output = format(err)
             print(output)
 
 
-class ModisBurntDownloader(AbstractMODISDownloader):
+class ModisBurntDownloader(AbstractModisDownloader):
 
     def __init__(self):
         super().__init__()
