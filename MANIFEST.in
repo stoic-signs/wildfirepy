@@ -1,0 +1,12 @@
+include README.md
+include setup.cfg
+include LICENSE
+include pyproject.toml
+
+recursive-include wildfirepy *.pyx *.c *.pxd
+
+prune build
+prune docs/_build
+prune docs/api
+
+global-exclude *.pyc *.o
