@@ -8,6 +8,15 @@ __all__ = ['SinusoidalCoordinate', ]
 class SinusoidalCoordinate:
     """
     Converts latitude and longitude in degrees to MODIS Sinusoidal grid coordinates.
+
+    Examples
+    --------
+    >>> coord = SinusoidalCoordinate()
+    >>> h, v = coords(latitude=30.3244, longitude=78.0418)
+
+    References
+    ----------
+    [1] https://modis-land.gsfc.nasa.gov/MODLAND_grid.html
     """
     def __init__(self):
 
