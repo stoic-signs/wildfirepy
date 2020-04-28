@@ -149,3 +149,6 @@ docs/api
 docs/whatsnew/latest_changelog.txt
 wildfirepy/version.py
 htmlcov/
+
+# VS Code
+.vscode

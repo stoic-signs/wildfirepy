@@ -1,11 +1,10 @@
 from wildfirepy.net.util import URLOpenerWithRedirect, ModisHtmlParser
 from wildfirepy.coordinates.util import SinusoidalCoordinate
-from requests.exceptions import HTTPError
 from pathlib import Path
 from urllib.error import HTTPError
 
 
-__all__ = ['AbstractModisDownloader', 'ModisBurntDownloader']
+__all__ = ['AbstractModisDownloader', 'ModisBurntAreaDownloader']
 
 
 class AbstractModisDownloader:
@@ -29,13 +28,22 @@ class AbstractModisDownloader:
         return self.get_available_files()
 
     def get_available_files(self):
+        return self.regex_traverser.get_all_files()
+
+    def get_available_jpg_files(self):
+        return self.regex_traverser.get_all_jpg_files()
+
+    def get_available_xml_files(self):
+        return self.regex_traverser.get_all_xml_files()
+
+    def get_available_hdf_files(self):
         return self.regex_traverser.get_all_hdf_files()
 
     def get_filename(self, latitude, longitude):
         h, v = self.converter(latitude, longitude)
         return self.regex_traverser.get_filename(h, v)
 
-    def get_hdf(self, *, year, month, latitude, longitude):
+    def get_hdf(self, *, year, month, latitude, longitude, **kwargs):
 
         if not self.has_files:
             self.get_files_from_date(year, month)
@@ -44,9 +52,9 @@ class AbstractModisDownloader:
         month = str(month) if month > 9 else "0" + str(month)
         date = f"{str(year)}.{month}.01/"
         url = self.base_url + date + filename
-        return self.fetch(url=url, filename=filename)
+        return self.fetch(url=url, filename=filename, **kwargs)
 
-    def get_xml(self, *, year, month, latitude, longitude):
+    def get_xml(self, *, year, month, latitude, longitude, **kwargs):
 
         if not self.has_files:
             self.get_files_from_date(year, month)
@@ -56,9 +64,9 @@ class AbstractModisDownloader:
         month = str(month) if month > 9 else "0" + str(month)
         date = f"{str(year)}.{month}.01/"
         url = self.base_url + date + filename
-        return self.fetch(url=url, filename=filename)
+        return self.fetch(url=url, filename=filename, **kwargs)
 
-    def get_jpg(self, *, year, month, latitude, longitude):
+    def get_jpg(self, *, year, month, latitude, longitude, **kwargs):
 
         if not self.has_files:
             self.get_files_from_date(year, month)
@@ -68,7 +76,7 @@ class AbstractModisDownloader:
         month = str(month) if month > 9 else "0" + str(month)
         date = f"{str(year)}.{month}.01/"
         url = self.base_url + date + filename
-        return self.fetch(url=url, filename=filename)
+        return self.fetch(url=url, filename=filename, **kwargs)
 
     def fetch(self, url, path='./', filename='temp.hdf'):
 
@@ -88,7 +96,7 @@ class AbstractModisDownloader:
             print(output)
 
 
-class ModisBurntDownloader(AbstractModisDownloader):
+class ModisBurntAreaDownloader(AbstractModisDownloader):
 
     def __init__(self):
         super().__init__()

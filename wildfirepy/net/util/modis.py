@@ -5,7 +5,7 @@ from urllib.request import HTTPBasicAuthHandler, HTTPCookieProcessor
 from http.cookiejar import CookieJar
 import re
 
-__all__ = ['URLOpenerWithRedirect', 'ModisHtmlParser', ]
+__all__ = ['URLOpenerWithRedirect', 'ModisHtmlParser']
 
 
 class URLOpenerWithRedirect:
@@ -74,6 +74,24 @@ class ModisHtmlParser:
         """
         return re.findall(r'href="(MCD64A1.*hdf)"', self.html_content)
 
+    def get_all_jpg_files(self):
+        """
+        Returns list of all `jpg` files available for download.
+        """
+        return re.findall(r'href="(BROWSE.*jpg)"', self.html_content)
+
+    def get_all_xml_files(self):
+        """
+        Returns list of all `xml` files available for download.
+        """
+        return re.findall(r'href="(MCD64A1.*hdf.xml)"', self.html_content)
+
+    def get_all_files(self):
+        """
+        Returns list of all `xml` files available for download.
+        """
+        return self.get_all_hdf_files() + self.get_all_jpg_files() + self.get_all_xml_files()
+
     def get_all_dates(self):
         """
         Returns list of all `dates` from which files can be downloaded.
@@ -102,6 +120,6 @@ class ModisHtmlParser:
 
         match = list(filter(r.match, self.get_all_hdf_files()))
         if len(match) == 0:
-            raise UserWarning("No file exists for given coordinates.")
+            raise ValueError("No file exists for given coordinates.")
 
         return match[0]

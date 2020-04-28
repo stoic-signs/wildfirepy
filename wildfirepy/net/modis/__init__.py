@@ -1,1 +1,1 @@
-from wildfirepy.net.modis.downloader import ModisBurntDownloader
+from wildfirepy.net.modis.downloader import *

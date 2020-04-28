@@ -1,1 +1,1 @@
-from wildfirepy.net.util.base import ModisHtmlParser, URLOpenerWithRedirect
+from wildfirepy.net.util.modis import *
