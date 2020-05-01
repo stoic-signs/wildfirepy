@@ -12,7 +12,11 @@ Use git to grab the latest version of WildfirePy:
 
 Done! In order to enable WildfirePy to be imported from any location you must make
 sure that the library is somewhere in your PYTHONPATH environmental variable.
-For now the easiest thing is to simply start Python from the directory you just
+For now the easiest thing is to install it locally by running,
+```
+pip install -e .
+```
+from the directory you just
 downloaded. 
 
 Usage
@@ -40,7 +44,8 @@ Contributing
 ------------
 
 If you would like to get involved, start by joining the  
-IRC chat room named #wildfirepy on irc [Riot](https://riot.im/app/#/room/!jWUOIxirCHymPQkpXb:matrix.org). 
+IRC chat room named #wildfirepy on irc [Riot](https://riot.im/app/#/room/!jWUOIxirCHymPQkpXb:matrix.org).
+
 Help is always welcome so let us know what you like to work
 on, or check out the [issues page](https://github.com/wildfirepy/wildfirepy-prerelease/issues) for
 a list of some known outstanding items.
