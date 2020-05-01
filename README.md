@@ -8,7 +8,7 @@ Installation
 
 Use git to grab the latest version of WildfirePy:
 
-    git clone https://github.com/wildfirepy/wildfirepy-prerelease.git
+    git clone https://github.com/wildfirepy/wildfirepy.git
 
 Done! In order to enable WildfirePy to be imported from any location you must make
 sure that the library is somewhere in your PYTHONPATH environmental variable.
