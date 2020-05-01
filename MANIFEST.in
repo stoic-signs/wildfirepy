@@ -1,6 +1,6 @@
 include README.md
 include setup.cfg
-include LICENSE
+include LICENSE.rst
 include pyproject.toml
 
 recursive-include wildfirepy *.pyx *.c *.pxd

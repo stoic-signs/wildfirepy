@@ -1,0 +1,12 @@
+{
+    "description": "The community-developed, free and open-source wildfire data analysis environment for Python.",
+    "license": "MIT",
+    "title": "WildfirePy",
+    "upload_type": "software",
+    "creators": [{
+        "name": "Raahul Singh",
+        "orcid": "0000-0003-4114-8856",
+        "affiliation": "Indian Institute of Information Technology Sri City"
+    }],
+    "access_right": "open"
+}
