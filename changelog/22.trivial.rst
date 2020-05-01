@@ -1,0 +1,1 @@
+Changes `modis` submodule to `usgs` submodule.

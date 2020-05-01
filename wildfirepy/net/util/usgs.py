@@ -5,7 +5,7 @@ from urllib.request import HTTPBasicAuthHandler, HTTPCookieProcessor
 from http.cookiejar import CookieJar
 import re
 
-__all__ = ['URLOpenerWithRedirect', 'ModisHtmlParser']
+__all__ = ['URLOpenerWithRedirect', 'USGSHtmlParser']
 
 
 class URLOpenerWithRedirect:
@@ -55,7 +55,7 @@ class URLOpenerWithRedirect:
         return self.opener.open(url)
 
 
-class ModisHtmlParser:
+class USGSHtmlParser:
     """
     Description
     -----------

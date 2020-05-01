@@ -1,3 +1,3 @@
-from wildfirepy.net.util.modis import *
+from wildfirepy.net.util.usgs import *
 
-__all__ = ['modis']
+__all__ = ['usgs']

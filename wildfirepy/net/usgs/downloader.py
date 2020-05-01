@@ -1,21 +1,21 @@
-from wildfirepy.net.util import URLOpenerWithRedirect, ModisHtmlParser
+from wildfirepy.net.util import URLOpenerWithRedirect, USGSHtmlParser
 from wildfirepy.coordinates.util import SinusoidalCoordinate
 from pathlib import Path
 from urllib.error import HTTPError
 
 
-__all__ = ['AbstractModisDownloader', 'ModisBurntAreaDownloader']
+__all__ = ['AbstractUSGSDownloader', 'ModisBurntAreaDownloader']
 
 
-class AbstractModisDownloader:
+class AbstractUSGSDownloader:
     """
     Description
     -----------
-    An Abstract Base Class Downloader for MODIS products.
+    An Abstract Base Class Downloader for USGS products.
     """
     def __init__(self):
         self.base_url = 'https://e4ftl01.cr.usgs.gov/'
-        self.regex_traverser = ModisHtmlParser()
+        self.regex_traverser = USGSHtmlParser()
         self.converter = SinusoidalCoordinate()
         self.url_opener = URLOpenerWithRedirect()
         self.has_files = False
@@ -90,7 +90,7 @@ class AbstractModisDownloader:
             latitude of the observation.
         longitude: `float`
             longitude of the observation.
-        kwargs: keyword arguments to be passed to `AbstractModisDownloader.fetch`
+        kwargs: keyword arguments to be passed to `AbstractUSGSDownloader.fetch`
 
         Returns
         -------
@@ -120,7 +120,7 @@ class AbstractModisDownloader:
             latitude of the observation.
         longitude: `float`
             longitude of the observation.
-        kwargs: keyword arguments to be passed to `AbstractModisDownloader.fetch`
+        kwargs: keyword arguments to be passed to `AbstractUSGSDownloader.fetch`
 
         Returns
         -------
@@ -151,7 +151,7 @@ class AbstractModisDownloader:
             latitude of the observation.
         longitude: `float`
             longitude of the observation.
-        kwargs: keyword arguments to be passed to `AbstractModisDownloader.fetch`
+        kwargs: keyword arguments to be passed to `AbstractUSGSDownloader.fetch`
 
         Returns
         -------
@@ -202,7 +202,7 @@ class AbstractModisDownloader:
             print(output)
 
 
-class ModisBurntAreaDownloader(AbstractModisDownloader):
+class ModisBurntAreaDownloader(AbstractUSGSDownloader):
     """
     Description
     -----------
