@@ -1,6 +1,9 @@
 WildfirePy
 =====
 
+![](https://github.com/wildfirepy/wildfirepy/workflows/Python%20application/badge.svg)
+![](https://github.com/wildfirepy/wildfirepy/workflows/Python%20package/badge.svg)
+
 WildfirePy is an open-source Python library for Wildfire GIS data analysis.
 
 Installation
