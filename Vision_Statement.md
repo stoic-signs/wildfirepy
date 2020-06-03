@@ -2,7 +2,7 @@
 
 ## About WildfirePy
 
-WildfirePy is a community-developed and community-driven free and open-source Python package that provides functionality for wildfire location, tracking and simulation in a single code-base.
+WildfirePy is a community-developed and community-driven, free and open-source Python package for wildfire data analysis, tracking and simulation.
 
 ## Motivation
 
@@ -12,7 +12,7 @@ Wildfires are devasting phenomena which cause loss of humongous volumes and vari
 
 Scientific organizations worldwide have been working towards forecasting and preventing this calamity. They have collected colossal databases recording wildfires, their triggers and repercussions -- most of which are publicly available. However, this information is often localized and stored in inconsistent formats. This is where WildfirePy comes in.
 
-WildfirePy aims to collect data from these sources and pack it into a consistent and cohesive code-base. This package can be used to visualize this data as well as track and simulate wildfires. WildfirePy seeks to play its part in the prevention, detection, control and suppression of wildfires.
+WildfirePy can be used to collect data from these sources for analysis. This package can be used to visualize this data as well as track and simulate wildfires. WildfirePy seeks to play its part in the prevention, detection, control and suppression of wildfires.
 
 ## Community Code of Conduct
 
