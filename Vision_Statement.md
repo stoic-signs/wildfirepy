@@ -41,7 +41,7 @@ pyproj\
 requests\
 pytest\
 pytest-cov\
-pytest-remotedata\
+pytest-remotedata
 
 ### Affiliated Packages
 
