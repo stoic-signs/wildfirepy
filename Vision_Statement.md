@@ -16,7 +16,7 @@ WildfirePy can be used to collect data from these sources for analysis. This pac
 
 ## Community Code of Conduct
 
-TBD
+Files detailing the PR and issue templates can be found [here.](https://github.com/wildfirepy/wildfirepy/tree/master/.github)
 
 ## Organizational Structure
 
@@ -27,12 +27,21 @@ Will be added after WEP 001 is up.
 TBD
 
 ## Programming Guidelines
+The [CONTRIBUTING.md](https://github.com/wildfirepy/wildfirepy/blob/master/CONTRIBUTING.md) file contains guidelines for contributing to the organization as well as opening issues and making pull requests.
 
 ### Choice of Languages
+Python
 
 ### Versioning
 
 ### Dependencies
+Python >=3.5\
+setuptools_scm\
+pyproj\
+requests\
+pytest\
+pytest-cov\
+pytest-remotedata\
 
 ### Affiliated Packages
 
