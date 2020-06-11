@@ -16,7 +16,7 @@ WildfirePy can be used to collect data from these sources for analysis. This pac
 
 ## Community Code of Conduct
 
-Files detailing the PR and issue templates can be found [here.](https://github.com/wildfirepy/wildfirepy/tree/master/.github)
+We encourage contributors to look up the [files detailing the PR and issue templates.](https://github.com/wildfirepy/wildfirepy/tree/master/.github)
 
 ## Organizational Structure
 
@@ -39,6 +39,12 @@ Python >=3.5\
 setuptools_scm\
 pyproj\
 requests\
+munch\
+numpy
+#### HDF Dependencies
+h5json\
+h5py
+#### Testing Dependencies
 pytest\
 pytest-cov\
 pytest-remotedata
